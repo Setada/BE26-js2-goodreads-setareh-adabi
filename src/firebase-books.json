@@ -1,0 +1,18 @@
+{
+  "books": {
+    "book1": {
+      "title": "A child called It",
+      "author": "Dave Pelzer",
+      "genre": "Memoir",
+      "isRead": false,
+      "score": null
+    },
+    "book2": {
+      "title": "Harry Potter",
+      "author": "J.K. Rowling",
+      "genre": "Fantasy",
+      "isRead": true,
+      "score": 5
+    }
+  }
+}

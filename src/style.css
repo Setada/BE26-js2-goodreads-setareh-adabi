@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background: #eee9df;
+}
+
+#app {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+form {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+input,
+select,
+button {
+  padding: 8px;
+  margin: 5px;
+}
+
+.book {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.book button {
+  display: block;
+  margin-left: 0;
+}
