@@ -16,6 +16,7 @@ async function loadBooks() {
     const book = new Book(
       bookData.title,
       bookData.author,
+      bookData.genre,
       bookData.isRead,
       bookData.score
     );
@@ -63,6 +64,8 @@ function renderBooks() {
 
         <p>Författare: ${book.author}</p>
 
+        <p>Genre: ${book.genre}</p>
+
         <p>Status: ${book.getStatusText()}</p>
 
         <p>Betyg: ${scoreText}</p>
@@ -104,6 +107,13 @@ function renderBooks() {
         required
       >
 
+      <input
+        type="text"
+        id="genre"
+        placeholder="Genre"
+        required
+      >
+
       <button type="submit">
         Lägg till bok
       </button>
@@ -125,12 +135,14 @@ function addEventListeners() {
 
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
+    const genre = document.querySelector('#genre').value;
 
-    const newBook = new Book(title, author);
+    const newBook = new Book(title, author, genre);
 
     await addBook({
       title: newBook.title,
       author: newBook.author,
+      genre: newBook.genre,
       isRead: newBook.isRead,
       score: newBook.score
     });
@@ -150,10 +162,11 @@ function addEventListeners() {
       book.isRead = checkbox.checked;
 
       await updateBook(book.id, {
-        title: book.title,
+        title:  book.title,
         author: book.author,
+        genre:  book.genre,
         isRead: book.isRead,
-        score: book.score
+        score:  book.score
       });
 
       await loadBooks();
@@ -178,6 +191,7 @@ function addEventListeners() {
       await updateBook(book.id, {
         title: book.title,
         author: book.author,
+        genre: book.genre,
         isRead: book.isRead,
         score: book.score
       });

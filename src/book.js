@@ -1,12 +1,14 @@
 export class Book {
   #title;
   #author;
+  #genre;
   #isRead;
   #score;
 
-  constructor(title, author, isRead = false, score = undefined) {
+  constructor(title, author, genre, isRead = false, score = undefined) {
     this.#title = title;
     this.#author = author;
+    this.#genre = genre;
     this.#isRead = isRead;
     this.#score = score;
   }
@@ -17,6 +19,10 @@ export class Book {
 
   get author() {
     return this.#author;
+  }
+  
+  get genre() {
+    return this.#genre;
   }
 
   get isRead() {
